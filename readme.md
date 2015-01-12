@@ -112,5 +112,5 @@ The Castle Windsor component configuration.
 
 Here's a project dependency graph that might help:
 
-![ElasticAnalytics project dependency graph](https://bytebucket.org/trevcore/elasticanalytics/raw/fbdc973ac6a589a0543c3b6b4a515e0b1cdb308d/docs/Project%20Dependency%20Graph.png?token=0574446b257f2cb0d7be065b1c18041026a5d35a)
+![ElasticAnalytics project dependency graph](https://raw.githubusercontent.com/trevorreeves/Sitecore-ElasticAnalytics/master/docs/Project%20Dependency%20Graph.png)
 
