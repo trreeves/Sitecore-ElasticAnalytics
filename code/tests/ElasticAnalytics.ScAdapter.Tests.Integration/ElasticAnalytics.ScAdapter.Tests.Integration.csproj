@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{47174AF6-B8E8-42CA-8F8D-9968E74DD5AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElasticAnalytics.ScAdapter.Tests.Integration</RootNamespace>
+    <AssemblyName>ElasticAnalytics.ScAdapter.Tests.Integration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\packages\FluentAssertions.3.2.1\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\packages\FluentAssertions.3.2.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture">
+      <HintPath>..\..\packages\AutoFixture.3.20.2\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.AutoMoq">
+      <HintPath>..\..\packages\AutoFixture.AutoMoq.3.20.2\lib\net40\Ploeh.AutoFixture.AutoMoq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.Xunit">
+      <HintPath>..\..\packages\AutoFixture.Xunit.3.20.2\lib\net40\Ploeh.AutoFixture.Xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics">
+      <HintPath>..\..\libs\Sitecore.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.DataAccess">
+      <HintPath>..\..\libs\Sitecore.Analytics.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Model">
+      <HintPath>..\..\libs\Sitecore.Analytics.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\libs\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Treevs.Essentials.AutoFixture.Xunit">
+      <HintPath>..\..\packages\Treevs.Essentials.AutoFixture.Xunit.1.0.5386.18567\lib\net45\Treevs.Essentials.AutoFixture.Xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit">
+      <HintPath>..\..\packages\xunit.1.9.0.1566\lib\xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.extensions">
+      <HintPath>..\..\packages\xunit.extensions.1.9.0.1566\lib\xunit.extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NCrunchFindTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapter\ElasticAnalyticsDataAdapterProvider.ContactFixture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ElasticAnalytics.Configuration.Windsor\ElasticAnalytics.Configuration.Windsor.csproj">
+      <Project>{c8d95d9c-8307-43df-aad6-da553c697d8b}</Project>
+      <Name>ElasticAnalytics.Configuration.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Container.Windsor\ElasticAnalytics.Container.Windsor.csproj">
+      <Project>{A87D3EC3-3445-4117-8B23-25D2B4D67DF0}</Project>
+      <Name>ElasticAnalytics.Container.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Repository.Types\ElasticAnalytics.Repository.Types.csproj">
+      <Project>{0E9850C8-B304-474D-BB83-F257A4D0A97C}</Project>
+      <Name>ElasticAnalytics.Repository.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.ScAdapter\ElasticAnalytics.ScAdapter.csproj">
+      <Project>{bafdec85-b391-4be2-a23d-8710eb6556b3}</Project>
+      <Name>ElasticAnalytics.ScAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Utils\ElasticAnalytics.Utils.csproj">
+      <Project>{c21eeeab-8251-40ac-b0cc-c1d442ed68b4}</Project>
+      <Name>ElasticAnalytics.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.ScAdapter.Tests.Customizations\ElasticAnalytics.ScAdapter.Tests.Customizations.csproj">
+      <Project>{DBB7684C-E0E9-474A-BDB1-E219C1466D8D}</Project>
+      <Name>ElasticAnalytics.ScAdapter.Tests.Customizations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Tests.Common\ElasticAnalytics.Tests.Common.csproj">
+      <Project>{7EB8F259-A3ED-49DB-9BAB-571D01947E09}</Project>
+      <Name>ElasticAnalytics.Tests.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

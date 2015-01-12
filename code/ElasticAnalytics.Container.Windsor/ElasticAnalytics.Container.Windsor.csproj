@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A87D3EC3-3445-4117-8B23-25D2B4D67DF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElasticAnalytics.Container.Windsor</RootNamespace>
+    <AssemblyName>ElasticAnalytics.Container.Windsor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ElasticAnalyticsWindsorSettings.cs" />
+    <Compile Include="ElasticAnalyticsWindsorContainer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElasticAnalytics.Repository.Elasticsearch\ElasticAnalytics.Repository.Elasticsearch.csproj">
+      <Project>{0c86726d-5679-4d96-b92e-6486a82c33f7}</Project>
+      <Name>ElasticAnalytics.Repository.Elasticsearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Model\ElasticAnalytics.Model.csproj">
+      <Project>{cfa236cd-b3c6-4548-9f42-e96a74009b32}</Project>
+      <Name>ElasticAnalytics.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Repository.Types\ElasticAnalytics.Repository.Types.csproj">
+      <Project>{0e9850c8-b304-474d-bb83-f257a4d0a97c}</Project>
+      <Name>ElasticAnalytics.Repository.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Service.Types\ElasticAnalytics.Service.Types.csproj">
+      <Project>{34fe6314-cbfb-4949-b60f-d7cc41f13198}</Project>
+      <Name>ElasticAnalytics.Service.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Service\ElasticAnalytics.Service.csproj">
+      <Project>{65123c3e-d493-47c2-a4f7-be35c479cef0}</Project>
+      <Name>ElasticAnalytics.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.ScAdapter\ElasticAnalytics.ScAdapter.csproj">
+      <Project>{bafdec85-b391-4be2-a23d-8710eb6556b3}</Project>
+      <Name>ElasticAnalytics.ScAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Utils\ElasticAnalytics.Utils.csproj">
+      <Project>{c21eeeab-8251-40ac-b0cc-c1d442ed68b4}</Project>
+      <Name>ElasticAnalytics.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

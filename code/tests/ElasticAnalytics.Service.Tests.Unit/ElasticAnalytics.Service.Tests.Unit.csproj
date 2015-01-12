@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3B43047-1CDA-4853-AD60-96A1278DF0FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElasticAnalytics.Service.Tests.Unit</RootNamespace>
+    <AssemblyName>ElasticAnalytics.Service.Tests.Unit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\packages\FluentAssertions.3.2.1\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\packages\FluentAssertions.3.2.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture, Version=3.20.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AutoFixture.3.20.2\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.AutoMoq">
+      <HintPath>..\..\packages\AutoFixture.AutoMoq.3.20.2\lib\net40\Ploeh.AutoFixture.AutoMoq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.Xunit, Version=3.20.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AutoFixture.Xunit.3.20.2\lib\net40\Ploeh.AutoFixture.Xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Treevs.Essentials.AutoFixture.Xunit">
+      <HintPath>..\..\packages\Treevs.Essentials.AutoFixture.Xunit.1.0.5386.18567\lib\net45\Treevs.Essentials.AutoFixture.Xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit">
+      <HintPath>..\..\packages\xunit.1.9.0.1566\lib\xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.extensions">
+      <HintPath>..\..\packages\xunit.extensions.1.9.0.1566\lib\xunit.extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Services\ContactServiceFixture.cs" />
+    <Compile Include="Services\LeaseServiceFixture.cs" />
+    <Compile Include="NCrunchFindTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ElasticAnalytics.Configuration.Windsor\ElasticAnalytics.Configuration.Windsor.csproj">
+      <Project>{C8D95D9C-8307-43DF-AAD6-DA553C697D8B}</Project>
+      <Name>ElasticAnalytics.Configuration.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Model\ElasticAnalytics.Model.csproj">
+      <Project>{cfa236cd-b3c6-4548-9f42-e96a74009b32}</Project>
+      <Name>ElasticAnalytics.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Repository.Types\ElasticAnalytics.Repository.Types.csproj">
+      <Project>{0e9850c8-b304-474d-bb83-f257a4d0a97c}</Project>
+      <Name>ElasticAnalytics.Repository.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Service.Types\ElasticAnalytics.Service.Types.csproj">
+      <Project>{34FE6314-CBFB-4949-B60F-D7CC41F13198}</Project>
+      <Name>ElasticAnalytics.Service.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Service\ElasticAnalytics.Service.csproj">
+      <Project>{65123c3e-d493-47c2-a4f7-be35c479cef0}</Project>
+      <Name>ElasticAnalytics.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Tests.Customizations\ElasticAnalytics.Tests.Customizations.csproj">
+      <Project>{93c3449b-7856-4eb3-bab0-d1e6a9423b3d}</Project>
+      <Name>ElasticAnalytics.Tests.Customizations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Tests.Common\ElasticAnalytics.Tests.Common.csproj">
+      <Project>{7EB8F259-A3ED-49DB-9BAB-571D01947E09}</Project>
+      <Name>ElasticAnalytics.Tests.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Utils\ElasticAnalytics.Utils.csproj">
+      <Project>{c21eeeab-8251-40ac-b0cc-c1d442ed68b4}</Project>
+      <Name>ElasticAnalytics.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
