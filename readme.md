@@ -50,6 +50,7 @@ A single instance of this service can honour requests from multiple Sitecore ins
 It is envisaged that multiple hosting options will be provided for the service; Windows service, IIS, console app etc.
 
 The advantages to this Service model are several:
+
 1. to reduce the CPU load on the content delivery instances
 2. to move the logic around serving the requests closer to the data; relevant when the database is hosted far away from the Sitecore instances for operations like contact locking.
 3. to introduce a physical abstraction between the database and the content delivery instances (think about providing xDB as-a-service).
@@ -78,7 +79,13 @@ Here's what you need to do that.
 
 - A test runner that can run [Xunit.net](https://github.com/xunit/xunit) tests (available as an extension to VS via VS tools->extensions).
 
-- Sitecore dlls v8.0 update 1 (more specifically v xxx).  The following dlls should be placed in code\libs directory.
+- Sitecore dlls v8.0 update 1.  The following dlls must be placed in code\libs directory.
+
+  - Sitecore.Abstractions
+  - Sitecore.Analytics
+  - Sitecore.Analytics.DataAccess
+  - Sitecore.Analytics.Model
+  - Sitecore.Kernel
 
 ####Code structure
 
