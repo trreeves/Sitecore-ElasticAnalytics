@@ -75,8 +75,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Treevs.Essentials.AutoFixture.Xunit">
-      <HintPath>..\..\packages\Treevs.Essentials.AutoFixture.Xunit.1.0.5386.18567\lib\net45\Treevs.Essentials.AutoFixture.Xunit.dll</HintPath>
+    <Reference Include="Treevs.Essentials.AutoFixture.Xunit, Version=1.0.5386.18567, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Treevs.Essentials.AutoFixture.Xunit.1.1\lib\net45\Treevs.Essentials.AutoFixture.Xunit.dll</HintPath>
     </Reference>
     <Reference Include="xunit">
       <HintPath>..\..\packages\xunit.1.9.0.1566\lib\xunit.dll</HintPath>
