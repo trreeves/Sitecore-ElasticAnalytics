@@ -1,7 +1,6 @@
 ﻿namespace ElasticAnalytics.Repository.Elasticsearch.Client
 {
     using System;
-    using System.Linq.Expressions;
 
     using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
     using ElasticAnalytics.Repository.Elasticsearch.QueryContext;
@@ -46,26 +45,6 @@
                     .Type(qCtx.Type)
                     .Id(id)
                     .Routing(qCtx.ShardKey??id));
-        }
-
-        public virtual ISearchResponse<T> Search<T>(
-            ISearchQueryContext qCtx, 
-            Expression<Func<T, string>> searchField, 
-            string searchTerm,
-            ISystemContext ctx) 
-            where T : class, IEsDoc
-        {
-            return this.client.Search<T>(s =>
-                s.Index(qCtx.Index)
-                .Type(qCtx.Type)
-                .Skip(qCtx.Skip)
-                .Size(qCtx.Take)
-                .Query(q =>
-                    q.Filtered(f =>
-                        f.Filter(c =>
-                            c.Term(searchField, searchTerm))))
-                .Routing(qCtx.ShardKey??null)
-                );
         }
 
         public IIndexResponse Save<T>(IQueryContext qCtx, T doc, ISystemContext ctx, long version = -1) 

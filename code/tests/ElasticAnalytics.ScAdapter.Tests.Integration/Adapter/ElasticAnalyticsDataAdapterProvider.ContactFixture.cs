@@ -2,8 +2,14 @@
 {
     using System;
 
+    using Castle.MicroKernel.Registration;
+
     using ElasticAnalytics.Container.Windsor;
+    using ElasticAnalytics.Model.Contact;
+    using ElasticAnalytics.Repository.Elasticsearch;
+    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
     using ElasticAnalytics.Repository.Types;
+    using ElasticAnalytics.Repository.Types.Repositories;
     using ElasticAnalytics.ScAdapter.Adapter;
     using ElasticAnalytics.ScAdapter.Tests.Customizations;
     using ElasticAnalytics.Tests.Common;
@@ -52,7 +58,7 @@
                     .Customize(new IContactCustomization(f.Create<IContactFactory>())) // create meaningful contacts
                     .Customize(
                         new TestIndicesUtilCustomization(
-                            container.Container.Resolve<IEsRequestConfiguration>(ElasticAnalyticsWindsorSettings.Configuration.ContactStorageSettingsKey)));
+                            container.Container.Resolve<EsRequestConfiguration<ElasticContact, EsContact>>()));
             };
         }
 

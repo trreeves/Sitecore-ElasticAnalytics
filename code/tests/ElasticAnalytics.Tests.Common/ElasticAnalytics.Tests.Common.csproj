@@ -72,7 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customizations\IRequestContextCustomization.cs" />
+    <Compile Include="Customizations\SystemContextCustomization.cs" />
     <Compile Include="Customizations\TestIndicesUtilCustomization.cs" />
     <Compile Include="EsUtils\TestIndexUtils.cs" />
     <Compile Include="Installers\TestSettingsInstaller.cs" />

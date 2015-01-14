@@ -16,14 +16,14 @@
 
         protected readonly ITypeMapper repoModelMapper;
 
-        protected readonly IEsRequestConfiguration requestConfig;
+        protected readonly IRequestConfiguration requestConfig;
 
         protected readonly string loggingName;
 
         public EsRepository(
             IEsClient client,
             ITypeMapper repoModelMapper,
-            IEsRequestConfiguration requestConfig)
+            EsRequestConfiguration<T, TRepo> requestConfig)
         {
             this.client = client;
             this.repoModelMapper = repoModelMapper;

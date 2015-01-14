@@ -22,10 +22,12 @@ namespace ElasticAnalytics.Repository.Elasticsearch.Exceptions
                     "Elasticsearch error occured when {0} : \n\n{1}", 
                     action, 
                     string.Format(
-                        "({0}) {1} - {2}\n---------------------------------------------\n{3}", 
+                        "({0}) {1} - {2}\n---------------------------------------------\n{3}\n{4}\n---------------------------------------------\n{5}", 
                         response.RequestInformation.HttpStatusCode,
                         response.RequestInformation.RequestMethod,
                         response.RequestInformation.RequestUrl,
+                        response.ServerError.Error,
+                        response.ServerError.ExceptionType,
                         response.RequestInformation.ResponseRaw == null ?
                             string.Empty :
                             System.Text.Encoding.Default.GetString(response.RequestInformation.ResponseRaw))))

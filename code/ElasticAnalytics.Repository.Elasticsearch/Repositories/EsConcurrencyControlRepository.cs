@@ -17,14 +17,14 @@ namespace ElasticAnalytics.Repository.Elasticsearch.Repositories
 
         protected readonly ITypeMapper repoModelMapper;
 
-        protected readonly IEsRequestConfiguration requestConfig;
+        protected readonly IRequestConfiguration requestConfig;
 
         protected readonly string loggingName;
 
         public EsConcurrencyControlRepository(
             IEsClient client,
             ITypeMapper repoMapper,
-            IEsRequestConfiguration requestConfig)
+            EsRequestConfiguration<T, TRepo> requestConfig)
         {
             this.client = client;
             this.repoModelMapper = repoMapper;

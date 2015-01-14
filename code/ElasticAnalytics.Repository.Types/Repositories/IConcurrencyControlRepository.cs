@@ -1,7 +1,5 @@
 ﻿namespace ElasticAnalytics.Repository.Types.Repositories
 {
-    using System;
-
     using ElasticAnalytics.Service.Types;
 
     public interface IConcurrencyControlRepository<T> : IRepository<T>
