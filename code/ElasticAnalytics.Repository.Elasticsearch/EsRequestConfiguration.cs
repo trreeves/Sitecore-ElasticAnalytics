@@ -1,39 +1,18 @@
 ﻿namespace ElasticAnalytics.Repository.Elasticsearch
 {
-    using ElasticAnalytics.Model.Contact;
-    using ElasticAnalytics.Model.Locking;
     using ElasticAnalytics.Repository.Types;
     using ElasticAnalytics.Service.Types;
-    using ElasticAnalytics.Utils;
 
     public class EsRequestConfiguration<T, TRepo> : IRequestConfiguration
     {
-        private readonly string indexIdentifier;
+        protected readonly string indexIdentifier;
 
-        private readonly string typeIdentifier;
+        protected readonly string typeIdentifier;
 
-        public EsRequestConfiguration()
+        public EsRequestConfiguration(string index = null, string type = null)
         {
-            if (typeof(T) == typeof(ElasticContact))
-            {
-                this.indexIdentifier = ElasticAnalyticsSettings.EsStorage.ContactIndexName;
-                this.typeIdentifier = ElasticAnalyticsSettings.EsStorage.ContactTypeName;
-            }
-
-            else if (typeof(T) == typeof(ElasticLease))
-            {
-                this.indexIdentifier = ElasticAnalyticsSettings.EsStorage.ContactIndexName;
-                this.typeIdentifier = ElasticAnalyticsSettings.EsStorage.LeaseTypeName;
-            }
-
-            else if (typeof(T) == typeof(ElasticContactIdentityMap))
-            {
-                this.indexIdentifier = ElasticAnalyticsSettings.EsStorage.ContactIndexName;
-                this.typeIdentifier = ElasticAnalyticsSettings.EsStorage.IdentityMapTypeName;
-            }
-
-            this.indexIdentifier = this.indexIdentifier.Trim().ToLower();
-            this.typeIdentifier = this.typeIdentifier.Trim().ToLower();
+            this.indexIdentifier = (index ?? typeof(T).Name).Trim().ToLower();
+            this.typeIdentifier = (type ?? typeof(T).Name).Trim().ToLower();
         }
 
         public string GenerateIndexIdentifier(ISystemContext ctx)

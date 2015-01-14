@@ -61,6 +61,7 @@
     <Compile Include="Client\EsClient.cs" />
     <Compile Include="Client\IElasticClientFactory.cs" />
     <Compile Include="EsRequestConfiguration.cs" />
+    <Compile Include="PersistenceModel\EsStorageConfigurations.cs" />
     <Compile Include="QueryContext\EsQueryContext.cs" />
     <Compile Include="QueryContext\IQueryContext.cs" />
     <Compile Include="Mapping\ContactRepoModelMappingProfile.cs" />

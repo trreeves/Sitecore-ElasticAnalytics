@@ -61,10 +61,23 @@
                     .ImplementedBy<EsRepository<ElasticContactIdentityMap, EsContactIdentityMap>>()
                     .LifestyleTransient(),
 
-                Component
-                    .For(typeof(EsRequestConfiguration<,>))
-                    .ImplementedBy(typeof(EsRequestConfiguration<,>))
-                    .LifestyleTransient()
+                // Request Configurations (that specify where documents are stored)
+
+                // Custom configs
+
+                Classes.FromAssemblyInThisApplication()
+                       .Pick()
+                       .If(t => t.BaseType.IsGenericType && 
+                            t.BaseType.GetGenericTypeDefinition().UnderlyingSystemType == typeof(EsRequestConfiguration<,>))
+                       .WithServiceSelect((type, types) => new [] { type.BaseType })
+                       .Configure(c => c.LifestyleSingleton()),
+
+               // Default configuration (choose an index and type name based on the repo model type name)
+
+               Component
+                   .For(typeof(EsRequestConfiguration<,>))
+                   .ImplementedBy(typeof(EsRequestConfiguration<,>))
+                   .LifestyleTransient()
             );
         }
     }
