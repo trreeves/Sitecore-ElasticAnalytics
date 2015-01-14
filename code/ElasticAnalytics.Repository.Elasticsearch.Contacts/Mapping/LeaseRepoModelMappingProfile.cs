@@ -1,11 +1,11 @@
-﻿namespace ElasticAnalytics.Repository.Elasticsearch.Mapping
+﻿namespace ElasticAnalytics.Repository.Elasticsearch.Contacts.Mapping
 {
     using System;
 
     using AutoMapper;
 
     using ElasticAnalytics.Model.Locking;
-    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
+    using ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel;
     using ElasticAnalytics.Utils.AutoMapper;
 
     public class LeaseRepoModelMappingProfile : Profile

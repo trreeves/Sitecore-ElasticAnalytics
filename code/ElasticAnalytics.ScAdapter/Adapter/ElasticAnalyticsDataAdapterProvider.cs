@@ -18,8 +18,6 @@
     {
         private readonly IElasticAnalyticsContactService contactService;
 
-        private readonly IElasticAnalyticsInteractionService interactionService;
-
         private readonly ITypeMapper modelMapper;
 
         private readonly ISystemContext ctx;
@@ -32,25 +30,18 @@
        public ElasticAnalyticsDataAdapterProvider(IElasticAnalyticsIoCContainer container) :
             this(
                 container.Resolve<IElasticAnalyticsContactService>(),
-                container.Resolve<IElasticAnalyticsInteractionService>(),
                 container.Resolve<ITypeMapper>(),
                 container.Resolve<ISystemContext>())
         { }
 
         public ElasticAnalyticsDataAdapterProvider(
             IElasticAnalyticsContactService contactService,
-            IElasticAnalyticsInteractionService interactionService,
             ITypeMapper modelMapper,
             ISystemContext ctx)
         {
             if (contactService == null)
             {
                 throw new ArgumentNullException("contactService");
-            }
-
-            if (interactionService == null)
-            {
-                throw new ArgumentNullException("interactionService");
             }
 
             if (modelMapper == null)
@@ -64,7 +55,6 @@
             }
 
             this.contactService = contactService;
-            this.interactionService = interactionService;
             this.modelMapper = modelMapper;
             this.ctx = ctx;
         }

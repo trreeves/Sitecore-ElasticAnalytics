@@ -1,11 +1,11 @@
-﻿namespace ElasticAnalytics.Repository.Elasticsearch.Mapping
+﻿namespace ElasticAnalytics.Repository.Elasticsearch.Contacts.Mapping
 {
     using System;
 
     using AutoMapper;
 
     using ElasticAnalytics.Model.Contact;
-    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
+    using ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel;
     using ElasticAnalytics.Utils.AutoMapper;
 
     using Newtonsoft.Json.Linq;

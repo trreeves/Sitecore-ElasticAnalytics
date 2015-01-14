@@ -7,6 +7,7 @@
     using ElasticAnalytics.Container.Windsor;
     using ElasticAnalytics.Model.Contact;
     using ElasticAnalytics.Repository.Elasticsearch;
+    using ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel;
     using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
     using ElasticAnalytics.Repository.Types;
     using ElasticAnalytics.Repository.Types.Repositories;

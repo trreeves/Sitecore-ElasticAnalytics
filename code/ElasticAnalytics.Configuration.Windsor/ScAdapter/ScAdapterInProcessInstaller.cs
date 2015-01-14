@@ -27,7 +27,7 @@
                     .Instance(
                         new CachingSettingsProvider(
                             new CompositeSettingsProvider(
-                                new DotNetConfigSettingsProvider()))), // will add sitecore settings provider at some point too.
+                                new DotNetConfigSettingsProvider()))), // TODO: add sitecore settings provider
 
                 // Contact Serialization
                 Classes.FromAssemblyInDirectory(new AssemblyFilter(".", "ElasticAnalytics.*"))

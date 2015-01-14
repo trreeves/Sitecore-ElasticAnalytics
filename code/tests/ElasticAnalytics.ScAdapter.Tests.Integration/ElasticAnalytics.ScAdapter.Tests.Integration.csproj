@@ -109,6 +109,10 @@
       <Project>{CFA236CD-B3C6-4548-9F42-E96A74009B32}</Project>
       <Name>ElasticAnalytics.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Repository.Elasticsearch.Contacts\ElasticAnalytics.Repository.Elasticsearch.Contacts.csproj">
+      <Project>{41389136-5995-4CE0-A642-CDBB11596495}</Project>
+      <Name>ElasticAnalytics.Repository.Elasticsearch.Contacts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ElasticAnalytics.Repository.Elasticsearch\ElasticAnalytics.Repository.Elasticsearch.csproj">
       <Project>{0C86726D-5679-4D96-B92E-6486A82C33F7}</Project>
       <Name>ElasticAnalytics.Repository.Elasticsearch</Name>

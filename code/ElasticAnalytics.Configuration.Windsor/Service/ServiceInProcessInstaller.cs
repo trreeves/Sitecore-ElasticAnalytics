@@ -31,11 +31,6 @@
                     Component
                         .For<IElasticAnalyticsContactService>()
                         .ImplementedBy<ContactService>()
-                        .LifestyleSingleton(),
-                            
-                    Component
-                        .For<IElasticAnalyticsInteractionService>()
-                        .ImplementedBy<InteractionService>()
                         .LifestyleSingleton());
             }
     }

@@ -7,6 +7,7 @@
     using ElasticAnalytics.Configuration.Windsor.Common;
     using ElasticAnalytics.Configuration.Windsor.Repository;
     using ElasticAnalytics.Model.Contact;
+    using ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel;
     using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
     using ElasticAnalytics.Repository.Types;
     using ElasticAnalytics.Repository.Types.Repositories;
@@ -41,6 +42,7 @@
                             new TypeMapperDefaultInstaller(),
                             new RepositoryMappingDefaultInstaller(),
                             new RepositoryInProcessInstaller(),
+                            new ContactsRepositoryInProcessInstaller(),
                             new TestSettingsInstaller(systemKey, instanceKey));
 
                     f.Customize(new WindsorAdapterCustomization(container)) // use the production Windsor installers

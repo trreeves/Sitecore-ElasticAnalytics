@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{34FE6314-CBFB-4949-B60F-D7CC41F13198}</ProjectGuid>
+    <ProjectGuid>{41389136-5995-4CE0-A642-CDBB11596495}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ElasticAnalytics.Service.Types</RootNamespace>
-    <AssemblyName>ElasticAnalytics.Service.Types</AssemblyName>
+    <RootNamespace>ElasticAnalytics.Repository.Elasticsearch.Contacts</RootNamespace>
+    <AssemblyName>ElasticAnalytics.Repository.Elasticsearch.Contacts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sitecore.Analytics">
-      <HintPath>..\libs\Sitecore.Analytics.dll</HintPath>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.0-ci1025\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.0-ci1025\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,17 +48,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISystemContext.cs" />
+    <Compile Include="Mapping\ContactRepoModelMappingProfile.cs" />
+    <Compile Include="Mapping\LeaseRepoModelMappingProfile.cs" />
+    <Compile Include="PersistenceModel\EsContact.cs" />
+    <Compile Include="PersistenceModel\EsContactIdentification.cs" />
+    <Compile Include="PersistenceModel\EsContactIdentityMap.cs" />
+    <Compile Include="PersistenceModel\EsDocument.cs" />
+    <Compile Include="PersistenceModel\EsLease.cs" />
+    <Compile Include="PersistenceModel\EsLeaseOwner.cs" />
+    <Compile Include="PersistenceModel\EsStorageConfigurations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IElasticAnalyticsContactService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ElasticAnalytics.Model\ElasticAnalytics.Model.csproj">
-      <Project>{cfa236cd-b3c6-4548-9f42-e96a74009b32}</Project>
+      <Project>{CFA236CD-B3C6-4548-9F42-E96A74009B32}</Project>
       <Name>ElasticAnalytics.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Repository.Elasticsearch\ElasticAnalytics.Repository.Elasticsearch.csproj">
+      <Project>{0C86726D-5679-4D96-B92E-6486A82C33F7}</Project>
+      <Name>ElasticAnalytics.Repository.Elasticsearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Repository.Types\ElasticAnalytics.Repository.Types.csproj">
+      <Project>{0E9850C8-B304-474D-BB83-F257A4D0A97C}</Project>
+      <Name>ElasticAnalytics.Repository.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Utils\ElasticAnalytics.Utils.csproj">
+      <Project>{C21EEEAB-8251-40AC-B0CC-C1D442ED68B4}</Project>
+      <Name>ElasticAnalytics.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.0-ci1025\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.0-ci1025\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

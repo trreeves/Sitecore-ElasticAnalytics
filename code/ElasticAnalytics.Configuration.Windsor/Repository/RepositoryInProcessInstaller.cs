@@ -4,14 +4,9 @@
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
 
-    using ElasticAnalytics.Model.Contact;
-    using ElasticAnalytics.Model.Locking;
     using ElasticAnalytics.Repository.Elasticsearch;
     using ElasticAnalytics.Repository.Elasticsearch.Client;
-    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
-    using ElasticAnalytics.Repository.Elasticsearch.Repositories;
     using ElasticAnalytics.Repository.Elasticsearch.Serialization;
-    using ElasticAnalytics.Repository.Types.Repositories;
 
     using Nest;
 
@@ -43,23 +38,6 @@
                     .For<JsonConverter>()
                     .ImplementedBy<EsApiFriendlyGuidConverter>()
                     .LifestyleSingleton(),
-
-                // Repositories
-
-                Component
-                    .For<IRepository<ElasticContact>>()
-                    .ImplementedBy<EsRepository<ElasticContact, EsContact>>()
-                    .LifestyleTransient(),
-
-                Component
-                    .For<IConcurrencyControlRepository<ElasticLease>>()
-                    .ImplementedBy<EsConcurrencyControlRepository<ElasticLease, EsLease>>()
-                    .LifestyleTransient(),
-
-                Component
-                    .For<IRepository<ElasticContactIdentityMap>>()
-                    .ImplementedBy<EsRepository<ElasticContactIdentityMap, EsContactIdentityMap>>()
-                    .LifestyleTransient(),
 
                 // Request Configurations (that specify where documents are stored)
 

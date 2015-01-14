@@ -1,4 +1,4 @@
-﻿namespace ElasticAnalytics.Repository.Elasticsearch.PersistenceModel
+﻿namespace ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel
 {
     using ElasticAnalytics.Model.Contact;
 
