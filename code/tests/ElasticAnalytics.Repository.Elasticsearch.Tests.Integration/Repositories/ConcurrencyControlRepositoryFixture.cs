@@ -42,7 +42,7 @@
                         .Customize(new ElasticContactCustomization()) // create meaningful contact objects
                         .Customize(new IRequestContextCustomization("EsLeaseRepositoryFixture", f.Create<string>()))
                         // To create a unique context for each test
-                        .Customize(new TestIndicesUtilCustomization(container.Resolve<IEsRequestConfiguration>("ContactStorage")));
+                        .Customize(new TestIndicesUtilCustomization(container.Resolve<IRequestConfiguration>("ContactStorage")));
                         // To create and delete and index for each test
 
                     f.Freeze<ISystemContext>();

@@ -3,7 +3,7 @@
     using ElasticAnalytics.Repository.Types;
     using ElasticAnalytics.Service.Types;
 
-    public class StandardRequestConfiguration : IEsRequestConfiguration
+    public class StandardRequestConfiguration : IRequestConfiguration
     {
         private readonly string indexIdentifier;
 

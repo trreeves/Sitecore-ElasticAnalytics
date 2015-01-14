@@ -9,11 +9,11 @@
 
     public class TestIndicesUtilCustomization : ICustomization
     {
-        private readonly IEsRequestConfiguration requestConfig;
+        private readonly IRequestConfiguration requestConfig;
         private readonly ISettingsProvider settings;
 
         public TestIndicesUtilCustomization(
-            IEsRequestConfiguration requestConfig,
+            IRequestConfiguration requestConfig,
             ISettingsProvider settings = null)
         {
             this.settings = settings;

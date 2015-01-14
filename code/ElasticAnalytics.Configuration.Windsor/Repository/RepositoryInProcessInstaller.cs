@@ -27,7 +27,7 @@
             // Indices
             var contactStorageConfig = 
                 Component
-                    .For<IEsRequestConfiguration>()
+                    .For<IRequestConfiguration>()
                     .Instance(
                         new StandardRequestConfiguration(
                             ElasticAnalyticsSettings.EsStorage.ContactIndexName, 
@@ -37,7 +37,7 @@
 
             var contactLeaseStorageConfig =
                 Component
-                    .For<IEsRequestConfiguration>()
+                    .For<IRequestConfiguration>()
                     .Instance(
                         new StandardRequestConfiguration(
                             ElasticAnalyticsSettings.EsStorage.ContactIndexName, 
@@ -47,7 +47,7 @@
 
             var contactIdentifierStorageConfig =
                 Component
-                    .For<IEsRequestConfiguration>()
+                    .For<IRequestConfiguration>()
                     .Instance(
                         new StandardRequestConfiguration(
                             ElasticAnalyticsSettings.EsStorage.ContactIndexName, 
@@ -56,6 +56,10 @@
                     .Named(ElasticAnalyticsWindsorSettings.Configuration.ContactIdentityMapSettingsKey);
 
             container.Register(
+
+                Component
+                    .For(typeof(IRepository<>))
+                    .ImplementedBy(typeof(EsRepository<,>)),
 
                 // ES client
                 Component
@@ -80,27 +84,27 @@
                 // ------ Contact -----------
 
                 contactStorageConfig,
-                contactLeaseStorageConfig,
+                contactLeaseStorageConfig, 
                 contactIdentifierStorageConfig,
 
                 Component
                     .For<IRepository<ElasticContact>>()
                     .ImplementedBy<EsRepository<ElasticContact, EsContact>>()
                     .DependsOn(
-                        Dependency.OnComponent(typeof(IEsRequestConfiguration), ElasticAnalyticsWindsorSettings.Configuration.ContactStorageSettingsKey))
+                        Dependency.OnComponent(typeof(IRequestConfiguration), ElasticAnalyticsWindsorSettings.Configuration.ContactStorageSettingsKey))
                     .LifestyleTransient(),
 
                 Component
                     .For<IConcurrencyControlRepository<ElasticLease>>()
                     .ImplementedBy<EsConcurrencyControlRepository<ElasticLease, EsLease>>()
-                    .DependsOn(Dependency.OnComponent(typeof(IEsRequestConfiguration), ElasticAnalyticsWindsorSettings.Configuration.ContactLeaseStorageSettingsKey))
+                    .DependsOn(Dependency.OnComponent(typeof(IRequestConfiguration), ElasticAnalyticsWindsorSettings.Configuration.ContactLeaseStorageSettingsKey))
                     .LifestyleTransient()
                     .Named("ContactLeaserRepo"),
 
                 Component
                     .For<IRepository<ElasticContactIdentityMap>>()
                     .ImplementedBy<EsRepository<ElasticContactIdentityMap, EsContactIdentityMap>>()
-                    .DependsOn(Dependency.OnComponent(typeof(IEsRequestConfiguration), ElasticAnalyticsWindsorSettings.Configuration.ContactIdentityMapSettingsKey))
+                    .DependsOn(Dependency.OnComponent(typeof(IRequestConfiguration), ElasticAnalyticsWindsorSettings.Configuration.ContactIdentityMapSettingsKey))
                     .LifestyleTransient()
             );
         }

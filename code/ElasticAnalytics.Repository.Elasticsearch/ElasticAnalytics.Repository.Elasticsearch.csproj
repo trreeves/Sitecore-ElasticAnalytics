@@ -60,11 +60,8 @@
     <Compile Include="Client\ElasticClientFactory.cs" />
     <Compile Include="Client\EsClient.cs" />
     <Compile Include="Client\IElasticClientFactory.cs" />
-    <Compile Include="PersistenceTypes.cs" />
     <Compile Include="QueryContext\EsQueryContext.cs" />
-    <Compile Include="QueryContext\EsSearchQueryContext.cs" />
     <Compile Include="QueryContext\IQueryContext.cs" />
-    <Compile Include="QueryContext\ISearchQueryContext.cs" />
     <Compile Include="Mapping\ContactRepoModelMappingProfile.cs" />
     <Compile Include="Mapping\LeaseRepoModelMappingProfile.cs" />
     <Compile Include="Extensions\GuidExtensions.cs" />
@@ -76,7 +73,7 @@
     <Compile Include="PersistenceModel\EsLease.cs" />
     <Compile Include="PersistenceModel\EsLeaseOwner.cs" />
     <Compile Include="PersistenceModel\IEsDoc.cs" />
-    <Compile Include="Exceptions\ElasticDataPersistanceException.cs" />
+    <Compile Include="Exceptions\EsDataPersistanceException.cs" />
     <Compile Include="QueryContext\StandardRequestConfiguration.cs" />
     <Compile Include="Repositories\EsConcurrencyControlRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

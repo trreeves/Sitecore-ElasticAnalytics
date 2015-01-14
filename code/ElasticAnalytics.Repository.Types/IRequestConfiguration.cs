@@ -2,7 +2,7 @@
 {
     using ElasticAnalytics.Service.Types;
 
-    public interface IEsRequestConfiguration
+    public interface IRequestConfiguration
     {
         string GenerateIndexIdentifier(ISystemContext ctx);
 

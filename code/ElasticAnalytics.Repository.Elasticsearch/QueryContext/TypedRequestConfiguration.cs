@@ -3,7 +3,7 @@
     using ElasticAnalytics.Repository.Types;
     using ElasticAnalytics.Service.Types;
 
-    public class TypedRequestConfiguration<TIndex, TType> : IEsRequestConfiguration
+    public class TypedRequestConfiguration<TIndex, TType> : IRequestConfiguration
     {
         private readonly string indexIdentifier;
 

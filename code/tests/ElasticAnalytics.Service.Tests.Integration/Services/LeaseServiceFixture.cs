@@ -54,7 +54,7 @@
                     .Customize(new WindsorAdapterCustomization(container))
                     .Customize(new ElasticContactCustomization()) // create meaningful contacts
                     .Customize(new IRequestContextCustomization(systemKey, instanceKey))
-                    .Customize(new TestIndicesUtilCustomization(container.Resolve<IEsRequestConfiguration>("ContactStorage")));
+                    .Customize(new TestIndicesUtilCustomization(container.Resolve<IRequestConfiguration>("ContactStorage")));
 
                 f.Freeze<ISystemContext>();
             };

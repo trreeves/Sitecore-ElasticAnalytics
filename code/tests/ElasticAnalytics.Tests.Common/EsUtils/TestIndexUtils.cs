@@ -17,12 +17,12 @@
 
         private readonly ElasticClient  client;
 
-        private readonly IEsRequestConfiguration[] requestConfigs;
+        private readonly IRequestConfiguration[] requestConfigs;
 
         public TestIndexUtils(
             ISettingsProvider settings, 
             ISystemContext ctx,
-            params IEsRequestConfiguration[] requestConfig)
+            params IRequestConfiguration[] requestConfig)
         {
             this.ctx = ctx;
             this.requestConfigs = requestConfig;
@@ -44,7 +44,7 @@
             }    
         }
 
-        private void CreateIndex(IEsRequestConfiguration requestConfig)
+        private void CreateIndex(IRequestConfiguration requestConfig)
         {
             var indexName = requestConfig.GenerateIndexIdentifier(this.ctx);
             this.client.Raw.IndicesCreate(indexName, null);
@@ -72,7 +72,7 @@
             }    
         }
 
-        private void DeleteIndex(IEsRequestConfiguration requestConfig)
+        private void DeleteIndex(IRequestConfiguration requestConfig)
         {
             this.client.Raw.IndicesDelete(requestConfig.GenerateIndexIdentifier(this.ctx));
         }

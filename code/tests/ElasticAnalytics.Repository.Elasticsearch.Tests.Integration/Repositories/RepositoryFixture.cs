@@ -46,7 +46,7 @@
                         .Customize(new WindsorAdapterCustomization(container)) // use the production Windsor installers
                         .Customize(new ElasticContactCustomization()) // create meaningful contact objects
                         .Customize(new IRequestContextCustomization(systemKey, instanceKey)) // To create a unique context for each test
-                        .Customize(new TestIndicesUtilCustomization(container.Resolve<IEsRequestConfiguration>("ContactStorage")))
+                        .Customize(new TestIndicesUtilCustomization(container.Resolve<IRequestConfiguration>("ContactStorage")))
                         .Freeze<ISystemContext>();
                 };
         }
