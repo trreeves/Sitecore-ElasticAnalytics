@@ -6,7 +6,7 @@
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
 
-    using ElasticAnalytics.Repository.Elasticsearch.Mapping;
+    using ElasticAnalytics.Repository.Elasticsearch.Contacts.Mapping;
 
     public class RepositoryMappingDefaultInstaller : IWindsorInstaller
     {

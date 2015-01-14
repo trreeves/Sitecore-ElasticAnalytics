@@ -1,6 +1,8 @@
-﻿namespace ElasticAnalytics.Repository.Elasticsearch.PersistenceModel
+﻿namespace ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel
 {
     using System;
+
+    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
 
     /// <summary>The _id is the contact identity by the way.</summary>
     public class EsContactIdentityMap : EsDocument

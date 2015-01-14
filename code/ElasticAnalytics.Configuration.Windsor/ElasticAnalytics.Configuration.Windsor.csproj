@@ -63,6 +63,7 @@
     <Compile Include="Common\ContainerFeaturesDefaultInstaller.cs" />
     <Compile Include="Common\TypeMapperDefaultInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ContactsRepositoryInProcessInstaller.cs" />
     <Compile Include="Repository\RepositoryInProcessInstaller.cs" />
     <Compile Include="Repository\RepositoryMappingDefaultInstaller.cs" />
     <Compile Include="ScAdapter\ScAdapterInProcessInstaller.cs" />
@@ -73,6 +74,10 @@
     <ProjectReference Include="..\ElasticAnalytics.Container.Windsor\ElasticAnalytics.Container.Windsor.csproj">
       <Project>{A87D3EC3-3445-4117-8B23-25D2B4D67DF0}</Project>
       <Name>ElasticAnalytics.Container.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticAnalytics.Repository.Elasticsearch.Contacts\ElasticAnalytics.Repository.Elasticsearch.Contacts.csproj">
+      <Project>{41389136-5995-4CE0-A642-CDBB11596495}</Project>
+      <Name>ElasticAnalytics.Repository.Elasticsearch.Contacts</Name>
     </ProjectReference>
     <ProjectReference Include="..\ElasticAnalytics.Repository.Elasticsearch\ElasticAnalytics.Repository.Elasticsearch.csproj">
       <Project>{0C86726D-5679-4D96-B92E-6486A82C33F7}</Project>

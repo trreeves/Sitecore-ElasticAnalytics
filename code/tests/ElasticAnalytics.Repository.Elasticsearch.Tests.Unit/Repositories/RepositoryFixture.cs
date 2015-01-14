@@ -9,6 +9,7 @@
     using ElasticAnalytics.Configuration.Windsor.Repository;
     using ElasticAnalytics.Model.Contact;
     using ElasticAnalytics.Repository.Elasticsearch.Client;
+    using ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel;
     using ElasticAnalytics.Repository.Elasticsearch.Extensions;
     using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
     using ElasticAnalytics.Repository.Elasticsearch.QueryContext;
@@ -43,7 +44,8 @@
                         new ContainerFeaturesDefaultInstaller(),
                         new TypeMapperDefaultInstaller(),
                         new RepositoryMappingDefaultInstaller(),
-                        new RepositoryInProcessInstaller());
+                        new RepositoryInProcessInstaller(),
+                        new ContactsRepositoryInProcessInstaller());
 
                     // mock out ES client 
                     container.Register(

@@ -10,6 +10,7 @@
     using ElasticAnalytics.Model.Contact;
     using ElasticAnalytics.Model.Locking;
     using ElasticAnalytics.Repository.Elasticsearch;
+    using ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel;
     using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
     using ElasticAnalytics.Repository.Types;
     using ElasticAnalytics.Service.Types;
@@ -45,6 +46,7 @@
 
                         new RepositoryMappingDefaultInstaller(),
                         new RepositoryInProcessInstaller(),
+                        new ContactsRepositoryInProcessInstaller(),
 
                         new ServiceInProcessInstaller(),
 

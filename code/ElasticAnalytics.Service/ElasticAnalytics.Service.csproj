@@ -42,7 +42,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ContactIdentityMapService.cs" />
     <Compile Include="Services\ContactService.cs" />
-    <Compile Include="Services\InteractionService.cs" />
     <Compile Include="Types\IContactIdentityMapService.cs" />
     <Compile Include="Types\ILeaseService.cs" />
     <Compile Include="Services\LeaseService.cs" />

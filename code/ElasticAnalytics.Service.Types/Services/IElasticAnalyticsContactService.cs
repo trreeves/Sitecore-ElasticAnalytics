@@ -5,12 +5,6 @@
     using ElasticAnalytics.Model.Contact;
     using ElasticAnalytics.Model.Locking;
 
-    /// <summary>
-    /// What the data adapter provider should have been; just an interface defining the contract
-    /// between an implementor of the data access layer to the analytics repository.
-    /// 
-    /// All obsolete methods from the data adapter are ommitted fron this interface.
-    /// </summary>
     public interface IElasticAnalyticsContactService
     {
         LockAttemptResult<ElasticContact> TryLoadAndLock(

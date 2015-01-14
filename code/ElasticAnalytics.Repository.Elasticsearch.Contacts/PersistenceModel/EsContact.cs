@@ -1,6 +1,8 @@
-﻿namespace ElasticAnalytics.Repository.Elasticsearch.PersistenceModel
+﻿namespace ElasticAnalytics.Repository.Elasticsearch.Contacts.PersistenceModel
 {
     using System;
+
+    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
 
     using Newtonsoft.Json.Linq;
 
