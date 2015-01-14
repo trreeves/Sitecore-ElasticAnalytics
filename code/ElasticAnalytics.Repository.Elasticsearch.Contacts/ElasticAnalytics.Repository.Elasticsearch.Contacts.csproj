@@ -53,7 +53,6 @@
     <Compile Include="PersistenceModel\EsContact.cs" />
     <Compile Include="PersistenceModel\EsContactIdentification.cs" />
     <Compile Include="PersistenceModel\EsContactIdentityMap.cs" />
-    <Compile Include="PersistenceModel\EsDocument.cs" />
     <Compile Include="PersistenceModel\EsLease.cs" />
     <Compile Include="PersistenceModel\EsLeaseOwner.cs" />
     <Compile Include="PersistenceModel\EsStorageConfigurations.cs" />

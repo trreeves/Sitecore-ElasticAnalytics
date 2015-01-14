@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ElasticAnalytics.Service.Services
 {
     using ElasticAnalytics.Model.Contact;
     using ElasticAnalytics.Repository.Types.Repositories;
     using ElasticAnalytics.Service.Types;
-    using ElasticAnalytics.Utils.DateTime;
 
     public class ContactIdentityMapService : IContactIdentityMapService
     {

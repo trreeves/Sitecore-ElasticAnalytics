@@ -61,6 +61,7 @@
     <Compile Include="Client\EsClient.cs" />
     <Compile Include="Client\IElasticClientFactory.cs" />
     <Compile Include="EsRequestConfiguration.cs" />
+    <Compile Include="PersistenceModel\EsDocument.cs" />
     <Compile Include="PersistenceModel\IEsDoc.cs" />
     <Compile Include="QueryContext\EsQueryContext.cs" />
     <Compile Include="QueryContext\IQueryContext.cs" />

@@ -2,6 +2,8 @@
 {
     using System;
 
+    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
+
     using Newtonsoft.Json.Linq;
 
     public class EsContact : EsDocument

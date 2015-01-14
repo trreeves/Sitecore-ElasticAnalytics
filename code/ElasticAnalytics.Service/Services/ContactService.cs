@@ -152,7 +152,7 @@
                 if (contact != null)
                 {
                     // TODO: can do all this async
-                    if (contact.Identification.Identity != null)
+                    if (contact.Identification.IdentityLevel != IdentificationLevel.None)
                     {
                         this.contactIdentityService.Delete(contact.Identification.Identity, ctx);
                     }
