@@ -105,6 +105,14 @@
       <Project>{A87D3EC3-3445-4117-8B23-25D2B4D67DF0}</Project>
       <Name>ElasticAnalytics.Container.Windsor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Model\ElasticAnalytics.Model.csproj">
+      <Project>{CFA236CD-B3C6-4548-9F42-E96A74009B32}</Project>
+      <Name>ElasticAnalytics.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ElasticAnalytics.Repository.Elasticsearch\ElasticAnalytics.Repository.Elasticsearch.csproj">
+      <Project>{0C86726D-5679-4D96-B92E-6486A82C33F7}</Project>
+      <Name>ElasticAnalytics.Repository.Elasticsearch</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ElasticAnalytics.Repository.Types\ElasticAnalytics.Repository.Types.csproj">
       <Project>{0E9850C8-B304-474D-BB83-F257A4D0A97C}</Project>
       <Name>ElasticAnalytics.Repository.Types</Name>

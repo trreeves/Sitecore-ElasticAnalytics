@@ -23,7 +23,7 @@
         public EsRepository(
             IEsClient client,
             ITypeMapper repoModelMapper,
-            IRequestConfiguration requestConfig)
+            EsRequestConfiguration<T, TRepo> requestConfig)
         {
             this.client = client;
             this.repoModelMapper = repoModelMapper;

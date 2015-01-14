@@ -24,7 +24,7 @@ namespace ElasticAnalytics.Repository.Elasticsearch.Repositories
         public EsConcurrencyControlRepository(
             IEsClient client,
             ITypeMapper repoMapper,
-            IRequestConfiguration requestConfig)
+            EsRequestConfiguration<T, TRepo> requestConfig)
         {
             this.client = client;
             this.repoModelMapper = repoMapper;

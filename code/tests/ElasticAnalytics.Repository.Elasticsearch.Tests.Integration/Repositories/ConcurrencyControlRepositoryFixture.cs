@@ -6,7 +6,9 @@
 
     using ElasticAnalytics.Configuration.Windsor.Common;
     using ElasticAnalytics.Configuration.Windsor.Repository;
+    using ElasticAnalytics.Model.Contact;
     using ElasticAnalytics.Model.Locking;
+    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
     using ElasticAnalytics.Repository.Types;
     using ElasticAnalytics.Repository.Types.Repositories;
     using ElasticAnalytics.Service.Types;
@@ -40,9 +42,9 @@
 
                     f.Customize(new WindsorAdapterCustomization(container)) // use the production Windsor installers
                         .Customize(new ElasticContactCustomization()) // create meaningful contact objects
-                        .Customize(new IRequestContextCustomization("EsLeaseRepositoryFixture", f.Create<string>()))
+                        .Customize(new SystemContextCustomization())
                         // To create a unique context for each test
-                        .Customize(new TestIndicesUtilCustomization(container.Resolve<IRequestConfiguration>("ContactStorage")));
+                        .Customize(new TestIndicesUtilCustomization(container.Resolve<EsRequestConfiguration<ElasticContact, EsContact>>()));
                         // To create and delete and index for each test
 
                     f.Freeze<ISystemContext>();

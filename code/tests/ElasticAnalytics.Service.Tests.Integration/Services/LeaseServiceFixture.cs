@@ -7,7 +7,10 @@
     using ElasticAnalytics.Configuration.Windsor.Common;
     using ElasticAnalytics.Configuration.Windsor.Repository;
     using ElasticAnalytics.Configuration.Windsor.Service;
+    using ElasticAnalytics.Model.Contact;
     using ElasticAnalytics.Model.Locking;
+    using ElasticAnalytics.Repository.Elasticsearch;
+    using ElasticAnalytics.Repository.Elasticsearch.PersistenceModel;
     using ElasticAnalytics.Repository.Types;
     using ElasticAnalytics.Service.Types;
     using ElasticAnalytics.Tests.Common;
@@ -53,8 +56,8 @@
                     .Customize(new AutoMoqCustomization())
                     .Customize(new WindsorAdapterCustomization(container))
                     .Customize(new ElasticContactCustomization()) // create meaningful contacts
-                    .Customize(new IRequestContextCustomization(systemKey, instanceKey))
-                    .Customize(new TestIndicesUtilCustomization(container.Resolve<IRequestConfiguration>("ContactStorage")));
+                    .Customize(new SystemContextCustomization())
+                    .Customize(new TestIndicesUtilCustomization(container.Resolve<EsRequestConfiguration<ElasticContact, EsContact>>()));
 
                 f.Freeze<ISystemContext>();
             };

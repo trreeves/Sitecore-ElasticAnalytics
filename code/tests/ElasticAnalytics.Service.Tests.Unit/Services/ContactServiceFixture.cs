@@ -43,7 +43,7 @@
                         .Customize(new WindsorAdapterCustomization(container))
                         // create meaningful contacts
                         .Customize(new ElasticContactCustomization(IdentificationLevel.Known))
-                        .Customize(new IRequestContextCustomization("ElasticAnalyticsContactServiceFixture", f.Create<string>()));
+                        .Customize(new SystemContextCustomization());
 
                     var contact = f.Freeze<ElasticContact>();
 
