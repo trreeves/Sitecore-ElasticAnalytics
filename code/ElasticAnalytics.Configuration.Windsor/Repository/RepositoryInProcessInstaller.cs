@@ -57,10 +57,6 @@
 
             container.Register(
 
-                Component
-                    .For(typeof(IRepository<>))
-                    .ImplementedBy(typeof(EsRepository<,>)),
-
                 // ES client
                 Component
                     .For<IElasticClientFactory>()
@@ -74,7 +70,7 @@
                 Component
                     .For<IEsClient>()
                     .ImplementedBy<EsClient>()
-                    .LifestyleTransient(),
+                    .LifestyleSingleton(),
 
                 Component
                     .For<JsonConverter>()
@@ -98,8 +94,7 @@
                     .For<IConcurrencyControlRepository<ElasticLease>>()
                     .ImplementedBy<EsConcurrencyControlRepository<ElasticLease, EsLease>>()
                     .DependsOn(Dependency.OnComponent(typeof(IRequestConfiguration), ElasticAnalyticsWindsorSettings.Configuration.ContactLeaseStorageSettingsKey))
-                    .LifestyleTransient()
-                    .Named("ContactLeaserRepo"),
+                    .LifestyleTransient(),
 
                 Component
                     .For<IRepository<ElasticContactIdentityMap>>()

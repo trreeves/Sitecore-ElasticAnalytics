@@ -4,8 +4,6 @@
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
 
-    using ElasticAnalytics.Model.Locking;
-    using ElasticAnalytics.Repository.Types.Repositories;
     using ElasticAnalytics.Service.Services;
     using ElasticAnalytics.Service.Types;
     using ElasticAnalytics.Service.Types.Services;
@@ -23,8 +21,6 @@
                     Component
                         .For<ILeaseService>()
                         .ImplementedBy<LeaseService>()
-                        .DependsOn(Dependency.OnComponent(typeof(IConcurrencyControlRepository<ElasticLease>), "ContactLeaserRepo"))
-                        .Named("ContactLeaser")
                         .LifestyleSingleton(),
 
                     Component
@@ -33,15 +29,14 @@
                         .LifestyleSingleton(),
                         
                     Component
-                            .For<IElasticAnalyticsContactService>()
-                            .ImplementedBy<ContactService>()
-                            .DependsOn(Dependency.OnComponent(typeof(ILeaseService), "ContactLeaser")) // magic string currently matched in repo installer
-                            .LifestyleSingleton(),
+                        .For<IElasticAnalyticsContactService>()
+                        .ImplementedBy<ContactService>()
+                        .LifestyleSingleton(),
                             
                     Component
-                            .For<IElasticAnalyticsInteractionService>()
-                            .ImplementedBy<InteractionService>()
-                            .LifestyleSingleton());
+                        .For<IElasticAnalyticsInteractionService>()
+                        .ImplementedBy<InteractionService>()
+                        .LifestyleSingleton());
             }
     }
 }
